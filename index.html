@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/style/main.css">
+    <link rel="stylesheet" href="./assets/style/print.css">
+
+</head>
+
+<body>
+    <main>
+
+        <div class="section section-one">
+            <div class="logo-container">
+                <img class="img-logo" src="./assets/images/logo.png" alt="collage logo">
+            </div>
+            <div class="text-container">
+                <p>
+                    <span id="ministryEN">
+                        Ministry of Higher Education and Scientific Research
+                    </span>
+                    <span class="text-ar" id="ministryAR">
+                        وزارة التعليم العالي والبحث العلمي
+                    </span>
+                </p>
+                <p>
+                    <span>
+                        Middle Technical University
+                    </span>
+                    <span class="text-ar">
+                        الجامعة التقنية الوسطى
+                    </span>
+                </p>
+                <p>
+                    <span>
+                        Electrical Engineering Technical College
+                    </span>
+                    <span class="text-ar">
+                        الكلية التقنية الهندسية الكهربائية
+                    </span>
+                </p>
+                <p>
+                    <span>
+                        Medical Instruments Engineering Department
+                    </span>
+                    <span class="text-ar">
+                        قسم هندسة تقنيات الاجهزة الطبية
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div class="section section-two">
+            <h1>
+                مُختبر اُلإلكترونيك
+                <br>
+                <span>
+                    Electronic Laboratory
+                </span>
+            </h1>
+
+        </div>
+        <div class="section section-three">
+
+        </div>
+        <div class="section section-four">
+
+            <div class="experiment-number-container">
+                <p>
+                    <span class="text-title">Experiment Number:</span>
+                    <span class="text-value text-value--experimentNumber"> 5 </span>
+                    <span class="no-print"><button id="btnEditExpNum">تعديل رقم التجربة</button></span>
+                </p>
+            </div>
+
+            <div class="experiment-name-container">
+                <p>
+                    <span class="text-value text-value--experimentName">
+                        Fullwave Rectifire with bridge.
+                    </span>
+                    <span class="no-print"><button id="btnEditExpName">تعديل اسم التجربة </button></span>
+                </p>
+            </div>
+            <p>
+                <span class="text-title">Prepared By :</span>
+                <span class="no-print"><button id="btnAddNewName">اضافة اسم</button></span>
+                <br />
+                <span class="text-value text-value--preparedBy">
+
+                    Name of Student
+                </span>
+
+            </p>
+
+            <p>
+
+                <span class="text-title">Class and Studying :</span><br />
+                <span class="text-value text-value--class">
+                    الشعبة
+                </span>
+                <span class="no-print">
+                    <select name="class" id="selectClass">
+                        <option value="الشعبة" selected>اختر الشعبة </option>
+                        <option value="A">شعبة A</option>
+                        <option value="B">شعبة B</option>
+                        <option value="C">شعبة C</option>
+                    </select>
+                </span>,
+                <span class="text-value text-value--studying">
+                    الدراسة
+                </span>
+                <span class="no-print">
+                    <select name="studying" id="selectStudying">
+                        <option value="الدراسة" selected>اختر الدراسة</option>
+                        <option value="Morning">صباحي</option>
+                        <option value="Evening">مسائي</option>
+                    </select>
+                </span>
+            </p>
+
+            <p>
+                <span class="text-title">Date:</span><input class="no-print" name="expDate" id="expDate" type="date" /><br/>
+                <span class="text-value text-value--date"> YYYY / MM / DD </span>
+
+            </p>
+
+        </div>
+    </main>
+
+    <script src="./assets/scripts/main.js"></script>
+</body>
+
+</html>

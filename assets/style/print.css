@@ -1,0 +1,82 @@
+@media print {
+  /* All your print styles go here */
+  *,
+  *::after,
+  *::before {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+  }
+  /* Exclude settings */
+  .no-print{
+    display: none;
+  }
+
+
+
+  body {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0em !important;
+  }
+  main {
+    display: block;
+    max-width: 794px;
+    margin: 0 auto;
+    height: 1122.5px;
+    /* border: none; */
+  }
+
+  .img-logo {
+    display: block;
+    width: 75.5px;
+    margin-left: 96px;
+  }
+
+  .section-one {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+  }
+  .section-one .logo-container {
+    justify-items: center;
+  }
+  .section-one .text-container {
+    margin-inline-start: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 14px;
+  }
+  .section-one .text-container > p {
+    margin-bottom: 5px;
+    font-size: 3.5277777778mm;
+  }
+
+  /* Section Two */
+
+  .section-two {
+    margin-top: 80px;
+    padding-inline-start: 116px;
+  }
+  .section-two h1 {
+    font-size: 45pt;
+  }
+
+  /* section three */
+  .section-three {
+    margin-top: 20px;
+    height: 95px;
+    background-image: url("../images/banner.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .sectoin-three .img-banner {
+    display: block;
+    width: 792px;
+  }
+
+  .section-four {
+  }
+}
