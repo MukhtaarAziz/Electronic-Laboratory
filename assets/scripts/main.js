@@ -18,6 +18,9 @@ const defaultTemplate = {
     }
 }
 
+let rootElement = null;
+let mainColor = null;
+let colorBoxesElements = null;
 const MAX_NAMES = 5;
 let btnEditExpNum, btnEditExpName, btnEditDate, btnAddNewName = null;
 let selectStudying, selectClass = null;
@@ -25,18 +28,36 @@ let expDate = null;
 let arrayName = [];
 
 document.addEventListener("DOMContentLoaded", (e) => {
-
     console.log("Document loaded!");
 
+    // Root and root style
+    rootElement =  document.querySelector(":root");
+    let rootComputedStyle = getComputedStyle(rootElement);
+    mainColor = rootComputedStyle.getPropertyValue("--main-color");
+
+    // Color Boxes
+    colorBoxesElements = document.querySelectorAll(".color-box");
+    // Experiment Properties
     btnEditExpNum = document.getElementById("btnEditExpNum");
     btnEditExpName = document.getElementById("btnEditExpName");
     btnAddNewName = document.getElementById("btnAddNewName");
-
     selectStudying = document.getElementById("selectStudying");
     selectClass = document.getElementById("selectClass");
     expDate = document.getElementById("expDate");
 
 
+
+    // Event Handlers
+
+    if(colorBoxesElements && colorBoxesElements.length > 0){
+        colorBoxesElements.forEach( (colorBoxElement,index)=> {
+            colorBoxElement.addEventListener("click",(e) => {
+                let color = e.target.dataset.color; 
+                console.log(color);
+                rootElement.style.setProperty('--main-color',color);
+            });
+        });
+    }
 
     if (btnEditExpNum) {
         btnEditExpNum.addEventListener("click", (e) => {
@@ -110,6 +131,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
             document.getElementsByClassName("text-value--date")[0].innerHTML = _expDate
         });
     }
+
 
     const ministryENElement = document.getElementById("ministryEN");
     const ministryARElement = document.getElementById("ministryAR");
