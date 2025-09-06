@@ -66,11 +66,7 @@
 
   /* section three */
   .section-three {
-    margin-top: 20px;
-    height: 95px;
-    background-image: url("../images/banner.png");
-    background-size: cover;
-    background-repeat: no-repeat;
+
   }
   .sectoin-three .img-banner {
     display: block;

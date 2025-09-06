@@ -33,10 +33,15 @@ main {
   border: 2px solid black;
 }
 
+.text-header--secondary{
+color:rgb(66, 66, 66);
+}
+
 .img-logo {
   width: 75.5px;
   margin-left: 96px;
-  mix-blend-mode: hard-light;
+  mix-blend-mode:luminosity
+  
 }
 .logo-container {
       position: relative;
@@ -73,9 +78,7 @@ main {
   margin-bottom: 5px;
   font-size: 3.5277777778mm;
 }
-.section-one .text-container .text-ar {
-  color: lightblue;
-}
+
 /* Section Two */
 .section-two {
   margin-top: 80px;
@@ -89,9 +92,9 @@ main {
 .section-three {
   margin-top: 20px;
   height: 95px;
-  background-image: url("../images/banner.png");
+  background-image: url("../images/banner002.png");
   background-color: var(--main-color);
-  background-blend-mode: multiply;
+  background-blend-mode: luminosity;
   background-size: cover;
   background-repeat: no-repeat;
 }

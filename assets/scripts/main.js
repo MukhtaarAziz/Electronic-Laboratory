@@ -18,6 +18,13 @@ const defaultTemplate = {
     }
 }
 
+
+
+let defaultTheme = {
+    color: "",
+    banner: ""
+}
+
 let rootElement = null;
 let mainColor = null;
 let colorBoxesElements = null;
@@ -29,14 +36,29 @@ let arrayName = [];
 
 document.addEventListener("DOMContentLoaded", (e) => {
     console.log("Document loaded!");
+    console.table(colors);
+
+    let colorBoxesContainerElement = document.getElementsByClassName("color-boxes-container")[0];
+    if(colorBoxesContainerElement){
+        let _colorBoxes = "";
+        colors.forEach( (color,index)=> {
+            // let _colorBox = `<div class="color-box color-box--apple" data-color="${color.hexaCode}" style="background-color: 	${color.hexaCode};">${color.nameAR}</div>`
+            _colorBox = color.createColorBoxElement();
+            colorBoxesContainerElement.appendChild(_colorBox);
+            // _colorBoxes +=_colorBox;
+        });
+        // colorBoxesContainerElement.innerHTML  = _colorBoxes;
+    }
+    // Color Boxes
+    colorBoxesElements = document.querySelectorAll(".color-box");
+
+
 
     // Root and root style
     rootElement =  document.querySelector(":root");
     let rootComputedStyle = getComputedStyle(rootElement);
     mainColor = rootComputedStyle.getPropertyValue("--main-color");
 
-    // Color Boxes
-    colorBoxesElements = document.querySelectorAll(".color-box");
     // Experiment Properties
     btnEditExpNum = document.getElementById("btnEditExpNum");
     btnEditExpName = document.getElementById("btnEditExpName");
@@ -48,7 +70,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
 
 
     // Event Handlers
-
+    // Color Boxes Click Events;
     if(colorBoxesElements && colorBoxesElements.length > 0){
         colorBoxesElements.forEach( (colorBoxElement,index)=> {
             colorBoxElement.addEventListener("click",(e) => {
@@ -62,6 +84,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     if (btnEditExpNum) {
         btnEditExpNum.addEventListener("click", (e) => {
             let _expNum = prompt("Experment Number", 0);
+            _expNum = _expNum.replace(/<[^>]*>?/gm, '');
             if (_expNum && _expNum != 0) {
                 console.log("Exp Num is: " + _expNum);
                 document.getElementsByClassName("text-value--experimentNumber")[0].innerHTML = _expNum;
@@ -90,6 +113,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     if (btnAddNewName) {
         btnAddNewName.addEventListener("click", (e) => {
             let _name = prompt("Name of Student", "");
+            _name = _name.replace(/<[^>]*>?/gm, '');
             if (_name != "") {
                 if (arrayName.length >= MAX_NAMES){
                     console.log("Names are Full!!");
